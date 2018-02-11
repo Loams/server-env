@@ -4,3 +4,11 @@ web:
     - "80:80"
   volumes:
     - /var/www:/app
+  links:
+    - db:db
+sb:
+  image: mysql
+  volumes:
+    - /var/lib/mysql:/var/lib/mysql
+  environment:
+    - MYSQL8ROOT_PASSWORD=root
