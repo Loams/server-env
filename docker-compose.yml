@@ -6,7 +6,7 @@ web:
     - /var/www:/app
   links:
     - db:db
-sb:
+db:
   image: mysql
   volumes:
     - /var/lib/mysql:/var/lib/mysql
