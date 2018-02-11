@@ -1,3 +1,10 @@
+db:
+  image: mysql
+  volumes:
+    - /var/lib/mysql:/var/lib/mysql
+  environment:
+    - MYSQL8ROOT_PASSWORD=root
+
 web:
   image: tutum/apache-php
   ports:
@@ -6,9 +13,3 @@ web:
     - /var/www:/app
   links:
     - db:db
-db:
-  image: mysql
-  volumes:
-    - /var/lib/mysql:/var/lib/mysql
-  environment:
-    - MYSQL8ROOT_PASSWORD=root
