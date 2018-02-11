@@ -5,6 +5,14 @@ db:
   environment:
     - MYSQL_ROOT_PASSWORD=root
 
+redis:
+  image: redis
+  volumes: /var/lib/redis:/data
+  environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+  ports:
+      - '6379:6379'
+
 web:
   image: tutum/apache-php
   ports:
