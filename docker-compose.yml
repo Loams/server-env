@@ -26,6 +26,7 @@ nginx:
   ports:
     - "80:80"
   volumes:
+    - /root/server-env/nginx:/etc/nginx/conf.d
     - /root/server-env/html:/var/www/html
   links:
     - php:php
