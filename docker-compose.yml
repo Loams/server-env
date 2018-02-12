@@ -20,14 +20,14 @@ php:
   image: php:7.2.2-fpm
   volumes:
     #- /root/server-env/html:/var/www/html
-    - /root/server-env/html:/var/www/html
+    - /var/www/:/var/www/html
 nginx:
   image: nginx
   ports:
     - "80:80"
   volumes:
     - /root/server-env/nginx:/etc/nginx/conf.d
-    - /root/server-env/html:/var/www/html
+    - /var/www/:/var/www/html
   links:
     - php:php
 #web:
