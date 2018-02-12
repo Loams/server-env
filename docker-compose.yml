@@ -16,11 +16,17 @@ redis:
   ports:
     - '6379:6379'
 
-web:
-  image: tutum/apache-php
-  ports:
-    - "80:80"
+php:
+  image: php:7.2.2-fpm
   volumes:
-    - /var/www:/app
-  links:
-    - db:db
+    - /var/www:/var/www
+#nginx:
+#  -image:
+#web:
+#  image: tutum/apache-php
+#  ports:
+#    - "80:80"
+#  volumes:
+#    - /var/www:/app
+#  links:
+#    - db:db
