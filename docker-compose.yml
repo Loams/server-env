@@ -26,6 +26,7 @@ services:
     volumes:
       #- /root/server-env/html:/var/www/html
       - /var/www/:/var/www/html
+    working_dir: /var/www/html
     links:
       - db:db
       - redis:redis
