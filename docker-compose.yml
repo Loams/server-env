@@ -30,6 +30,7 @@ nginx:
     - /var/www/:/var/www/html
   links:
     - php:php
+    - db:db
 #web:
 #  image: tutum/apache-php
 #  ports:
