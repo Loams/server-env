@@ -21,6 +21,7 @@ php:
   volumes:
     #- /root/server-env/html:/var/www/html
     - /var/www/:/var/www/html
+    - db:db
 nginx:
   image: nginx
   ports:
@@ -30,7 +31,6 @@ nginx:
     - /var/www/:/var/www/html
   links:
     - php:php
-    - db:db
 #web:
 #  image: tutum/apache-php
 #  ports:
