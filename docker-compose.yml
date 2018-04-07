@@ -17,12 +17,16 @@ redis:
     - '6379:6379'
 
 php:
-  image: php:7.2.2-fpm
+  container_name: php
+  build:
+    context: ./php
+    dockerfile: php.dockerfile
   volumes:
     #- /root/server-env/html:/var/www/html
     - /var/www/:/var/www/html
   links:
     - db:db
+    - redis:redis
 
 nginx:
   image: nginx
