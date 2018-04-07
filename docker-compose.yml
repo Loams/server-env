@@ -21,6 +21,7 @@ php:
   volumes:
     #- /root/server-env/html:/var/www/html
     - /var/www/:/var/www/html
+  links:
     - db:db
 
 nginx:
